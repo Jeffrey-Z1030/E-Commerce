@@ -40,9 +40,12 @@ function NavBar() {
               'aria-labelledby': 'basic-button',
             }}
           >
-            <MenuItem onClick={handleClose}><Link to='allProduct'>All Items</Link></MenuItem>
-            <MenuItem onClick={handleClose}><Link>Option 2</Link></MenuItem>
-            <MenuItem onClick={handleClose}><Link>Option 3</Link></MenuItem>
+            <MenuItem onClick={handleClose}><Link to='login'>Login</Link></MenuItem>
+            <MenuItem onClick={handleClose}><Link to='/'>All Items</Link></MenuItem>
+            <MenuItem onClick={handleClose}><Link to='electronic'>Electronics</Link></MenuItem>
+            <MenuItem onClick={handleClose}><Link to='jewel'>Jewelery</Link></MenuItem>
+            <MenuItem onClick={handleClose}><Link to='men'>Men's Clothing</Link></MenuItem>
+            <MenuItem onClick={handleClose}><Link to='women'>Women's Clothing</Link></MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>

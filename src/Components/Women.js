@@ -1,46 +1,36 @@
+import { useState, useEffect } from "react";
 import { Paper, Typography, Grid, ButtonBase } from "@mui/material";
-import { useEffect, useState } from "react";
-import { styled } from '@mui/material/styles';
-import './AllProduct.css'
 import { Link } from "react-router-dom";
+import { styled } from '@mui/material/styles';
 
-const Img = styled('img')({
-  margin: 'auto',
-  display: 'block',
-  maxWidth: '100%',
-  maxHeight: '100%',
-});
-
-const productStyles = {
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '10px',
-  margin: '10px',
-  maxWidth: '500px',
-};
-
-
-
-function AllProducts() {
+function WomenClothing() {
   const [products, setProducts] = useState([]);
 
-  // async function single(id){
-  //   const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-  //   .then(res=>res.json())
-  //   .then(json=>console.log(json))
-  // }
-  // single()
+  const Img = styled('img')({
+    margin: 'auto',
+    display: 'block',
+    maxWidth: '100%',
+    maxHeight: '100%',
+  });
+  
+  const productStyles = {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '10px',
+    margin: '10px',
+    maxWidth: '500px',
+  };
 
-  async function getProducts() {
-    const response = await fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((json) => setProducts(json));
+  async function getWomenClothing() {
+    const response = await fetch('https://fakestoreapi.com/products/category/women\'s%20clothing')
+      .then(res => res.json())
+      .then(json => setProducts(json));
   }
 
   useEffect(() => {
-    getProducts();
+    getWomenClothing();
   }, []);
 
   return (
@@ -95,4 +85,4 @@ function AllProducts() {
   );
 }
 
-export default AllProducts;
+export default WomenClothing;
